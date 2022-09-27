@@ -1,1 +1,73 @@
 /* Your CSS Here! */
+body {
+    background-color: rgb(218, 218, 218);
+}
+
+.container {
+    width: 100vw;
+    height: 80vh;
+    background-color:rgb(184, 142, 86);
+    position: relative;
+    margin-bottom: 0;
+}
+
+/*PLANT*/
+.plant {
+    position: absolute;
+    bottom: -20px;
+    left: 25%;
+}
+
+.plant__pot{
+    width: 200px;
+    height: 300px;
+    position: relative;
+    background-color: linear-gradient(to bottom, green,lightgreen);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.plant__leaf1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:-200px;
+    left:100px;
+    background-color: rgb(158, 241, 158);
+    border-top-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    z-index: 2;
+}
+.plant__leaf2{
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    top:-300px;
+    left:100px;
+    background-color: rgb(135, 215, 135);
+    border-top-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    z-index: 2;
+}
+.plant__leaf3{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:-100px;
+    left:0px;
+    background-color: rgb(102, 230, 102);
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+    z-index: 2;
+}
+.plant__leaf4{
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top:-300px;
+    left:-50px;
+    background-color: rgb(90, 176, 90);
+    border-top-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+    z-index: 1;
+}
