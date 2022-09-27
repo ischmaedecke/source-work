@@ -1,0 +1,108 @@
+body {
+    font-family: adobe-garamond-pro,serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    cursor:crosshair;
+}
+
+h1 {
+    font-family: adobe-garamond-pro,serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 50pt;
+}
+
+h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 15pt;
+}
+
+p {
+    font-size: 22pt;
+    
+}
+
+.div-menu{
+    position:sticky;
+    display: block;
+    background-color: rgb(255, 200, 200);
+    border: 5px;
+}
+
+details > summary {
+    list-style: none;
+}
+
+
+/* LINKS */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: wavy underline;
+}
+a:visited{
+    color: rgba(0, 0, 0, .1);
+}
+
+/* LIST BULLETS OR NUMBERS */
+::marker{
+    font-weight: bold;
+}
+
+
+.list-of-instructions {
+    position: relative;
+}
+
+/* THIS IS NOT WORKING AS I WANT IT*/
+/* THIS IS NOT WORKING AS I WANT IT*/
+/* THIS IS NOT WORKING AS I WANT IT*/
+/* THIS IS NOT WORKING AS I WANT IT*/
+/* THIS IS NOT WORKING AS I WANT IT*/
+li ul > img {
+    display: none;
+}
+
+li ul > img {
+    display:block;
+    position:fixed;
+    max-width:80%;
+    height:50%;
+    object-fit: cover;
+    z-index: 1;
+    top: 10;
+    right: 10;
+}
+
+
+li img {
+   display: none;
+   max-width:50%;
+   height:100%;
+   object-fit: cover;
+   z-index: -1;
+}
+
+li:hover img {
+    display:block;
+    position:fixed;
+    top: 0;
+    right: 0;
+}
+
+div {
+    display: block;
+    width: 40%;
+    margin-left: 2rem;
+
+}
+
+.half-of-screen{
+    display: block;
+    width: 40%;
+    margin-left: 2rem;
+}
