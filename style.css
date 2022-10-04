@@ -17,15 +17,19 @@ a:visited{
     display: block;
     float:right;
     text-align: left;
-    width: 50%;
+    max-width: 40%;
+    padding: 0rem;
+    padding-right: 3rem;
+    
 }
 
 .landing-image {
     display:block;
     position:fixed;
+    object-fit: cover;
     width: auto;
-    height: 100%;
-    margin: left 0rem;;
+    max-height: 100%;
+    margin-left:  0rem;
     padding: 0rem;
     z-index: -1;
 }
