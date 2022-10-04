@@ -1,0 +1,61 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+
+}
+
+p{
+    padding: 20px;
+}
+
+
+/*THIS IS NOT WORKING, WHY IS THAT?
+p .box-2{
+    transform: rotate(-90);
+}
+*/
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "nav content content"
+    "footer footer footer";
+}
+
+.box{
+    width: 100%;
+
+}
+
+.box-1{
+    background-color: lightblue;
+    grid-area: header;
+    position: fixed;
+}
+
+.box-2{
+    background-color: lightcoral;
+    grid-area: nav;
+}
+
+.box-3{
+    background-color: lightgreen;
+    grid-area: content;
+}
+
+.box-4{
+    background-color: lightseagreen;
+    grid-area: footer;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
