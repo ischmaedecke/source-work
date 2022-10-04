@@ -1,8 +1,31 @@
 body {
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
-    color: green
+    color: rgb(33, 255, 33)
 }
 
 p{
     color:blue
+
+}
+
+a:visited{
+    color: rgb(20, 196, 255);
+}
+
+.text-menu{
+    display: block;
+    float:right;
+    text-align: left;
+    width: 50%;
+}
+
+.landing-image {
+    display:block;
+    position:fixed;
+    width: auto;
+    height: 100%;
+    margin: left 0rem;;
+    padding: 0rem;
+    z-index: -1;
 }

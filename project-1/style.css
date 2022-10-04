@@ -2,32 +2,39 @@ body {
     font-family: adobe-garamond-pro,serif;
     font-weight: normal;
     font-style: normal;
+    line-height: 1.5rem;
     color: rgb(0, 0, 0);
     cursor:crosshair;
+    display: block;
+    width: 80%;
+    margin-left: 2rem;
+    padding: 2rem;
+    background-color: rgb(rgb(255, 236, 152))
 }
 
 h1 {
     font-family: adobe-garamond-pro,serif;
     font-weight: 700;
     font-style: italic;
-    font-size: 50pt;
+    font-size: 30pt;
 }
 
 h2 {
     font-family:Arial, Helvetica, sans-serif;
     font-weight:bold;
-    font-size: 15pt;
+    font-size: 10pt;
+    line-height: .5rem;
 }
 
 p {
-    font-size: 22pt;
+    font-size: 16pt;
     
 }
 
 .div-menu{
     position:sticky;
     display: block;
-    background-color: rgb(255, 200, 200);
+    background-color: rgb(255, 255, 255);
     border: 5px;
 }
 
@@ -101,8 +108,10 @@ div {
 
 }
 
+/*
 .half-of-screen{
     display: block;
     width: 40%;
     margin-left: 2rem;
 }
+*/
