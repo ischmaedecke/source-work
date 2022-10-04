@@ -1,16 +1,18 @@
 body {
     background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(33, 255, 33)
+    font-size: 24pt;
+    color: rgb(255, 3, 251)
 }
 
 p{
     color:blue
+    background-color: rgb(255, 255, 255);
 
 }
 
 a:visited{
-    color: rgb(20, 196, 255);
+    color: rgb(255, 231, 20);
 }
 
 .text-menu{
@@ -18,6 +20,7 @@ a:visited{
     float:right;
     text-align: left;
     max-width: 40%;
+    margin-left: 10px;
     padding: 0rem;
     padding-right: 3rem;
     
