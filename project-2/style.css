@@ -6,9 +6,18 @@
     100% { background-color: rgb(224, 255, 184); }
   }
 
+  /* @keyframes wipe-enter {
+	0% { background-color: rgb(224, 255, 184); }
+    30% { background-color: rgb(192, 250, 154); }
+    70% { background-color: rgb(148, 228, 198); }
+    100% { background-color: rgb(202, 255, 133); }
+	
+} */
+
+
 p {
     font-family: 'Miniver', Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 255);
+    color: rgb(0, 76, 14);
     text-align: center;
     font-size: 70px;
 }
@@ -27,12 +36,32 @@ p {
     flex-direction: column;
     height: 25vh;
     width: 15vw;
-    overflow:scroll;
+    overflow-y:scroll;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
     -webkit-animation-name: blackWhite;  
     -webkit-animation-iteration-count: infinite;  
     -webkit-animation-duration: 12s; 
 
 }
 
-/* How do I get each letter to snap 
-at its central position when scrolling? */
+.letter-container::-webkit-scrollbar {
+    display: none;
+  }
+
+
+/*  QUESTIONS
+
+1. How do I get each letter to snap 
+at its central position when scrolling?
+
+2. How do I make the gradient flow vertically
+in each of the boxes, to indicate the position of the words?
+OR CAN BE A SOUND COMPONENT (frequency to indicate the
+equivalent position of each letter)
+
+3. To trigger when idle: multiple scrolling to original words?
+
+*/
