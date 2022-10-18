@@ -1,3 +1,38 @@
-body {
-    color: blue
+
+@-webkit-keyframes blackWhite {  
+    0% { background-color: rgb(224, 255, 184); }
+    30% { background-color: rgb(192, 250, 154); }
+    70% { background-color: rgb(148, 228, 198); }
+    100% { background-color: rgb(224, 255, 184); }
+  }
+
+p {
+    font-family: 'Miniver', Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 255);
+    text-align: center;
+    font-size: 70px;
 }
+
+.row {
+    /* display: grid;
+    grid-area: repeat (7,1fr); */
+    display:flex;
+    flex-direction: row;
+
+
+}
+
+.letter-container{
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 15vw;
+    overflow:scroll;
+    -webkit-animation-name: blackWhite;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 12s; 
+
+}
+
+/* How do I get each letter to snap 
+at its central position when scrolling? */

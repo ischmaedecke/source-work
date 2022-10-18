@@ -1,0 +1,76 @@
+/* These are the knobs you wanna tune later on */
+:root{
+    --typography-body: 18px;
+    --typography-body-desktop: 18px;
+    --typography-heading: 24px;
+    --typography-heading-desktop: 24px;
+    
+    --spacing: 24px;
+
+    --list-direction: column;
+
+    --brand-color1: green;
+    --brand-color2: lightgreen;
+
+}
+
+body {
+    margin: 12px;
+}
+p, li {
+    background-color: var(--brand-color2);
+    color: var(--brand-color1);
+    font-size: var(--typography-body);
+}
+
+ol {
+    display: flex;
+    flex-direction: var(--list-direction);
+    gap: calc(0.5 * var(--spacing));
+}
+
+
+/* This is adjustment for DESKTOP */
+
+@media (min-width: 768px) {
+
+
+
+
+
+}
+/* It's actually better practice to set all your variables 
+in the beggining of the stylesheet and have them 
+appropriately named. */
+    /* :root{
+        --typography-body: 36px;
+        --typography-heading: 72px;
+        
+        --spacing: 48px;
+
+        --list-direction: row;
+    } */
+}
+
+/* @media (min-width: 768px) {
+    body{
+        margin: 24px;
+    }
+
+    p, li {
+        color: blue;
+        font-size: 48px;
+    }
+
+    ol {
+        flex-direction: row;
+        gap: 50px;
+    }
+}
+
+@media print{
+    p, li{
+        color: black;
+        background-color: white;
+    }
+} */
