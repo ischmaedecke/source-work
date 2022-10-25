@@ -15,53 +15,33 @@
 } */
 
 
-p {
-    font-family:  Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 70px;
-}
-
-.letter-container{
-    scroll-snap-type: y mandatory;
-    display: flex;
-    flex-direction: column;
-    height: 25vh;
-    width: 15vw;
-    overflow-y:scroll;
-    scroll-behavior: smooth;
-
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-/* 
-    -webkit-animation-name: blackWhite;  
-    -webkit-animation-iteration-count: infinite;  
-    -webkit-animation-duration: 12s;  */
-
-}
-
-.letter-container p {
-    scroll-snap-align: start;
-    line-height: 25vh;
-    /* each p should be its own little box and have
-    letters centered on it
-    /* HELL YEAH I GOT IT */
-}
-
-.letter-container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .row {
+.row {
     /* display: grid;
     grid-area: repeat (7,1fr); */
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 25vh;
+    width: 100vw;
+    
+    scroll-snap-type: y mandatory; 
+    overflow-y:scroll;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+
+    background-color: blue;
     background-repeat:no-repeat;
     background-attachment:local;
 }
 
-.row1{
+/* ROW COLORS  */
+/* .row1{
     background-image: linear-gradient(rgb(227, 231, 176), rgb(255, 140, 140));
 }
 .row2{
@@ -72,7 +52,56 @@ p {
 }
 .row4{
     background-image: linear-gradient(rgb(223, 175, 253), rgb(200, 100, 100));
+} */
+
+
+
+p {
+    font-family:  Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 70px;
 }
+
+.letter-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around; /*FUCK YEAH INGRID*/
+
+    /*THIS SCROLL SHOULD BE ACCESSED BY USUAL SCROLLING*/
+    scroll-snap-align: start; /* this makes the scroll snap*/
+
+
+/* 
+    -webkit-animation-name: blackWhite;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 12s;  */
+
+}
+
+.letter-container p {
+    height: 25vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /*THIS SCROLL SHOULD ONLY BE TRIGGERED TO RANDOMIZE AT CLICK*/
+    scroll-snap-align: start;
+    line-height: 25vh;
+
+    /* each p should be its own little box and have
+    letters centered on it*/
+}
+
+.letter-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.row::-webkit-scrollbar {
+display: none;
+}
+
 
 
 /*  QUESTIONS

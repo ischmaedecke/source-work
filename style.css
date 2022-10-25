@@ -1,5 +1,4 @@
 body {
-    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24pt;
     color: rgb(255, 3, 251)
@@ -21,8 +20,9 @@ a:visited{
     text-align: left;
     max-width: 40%;
     margin-left: 10px;
-    padding: 0rem;
+    padding: 2rem;
     padding-right: 3rem;
+    background-color: white;
     
 }
 
@@ -36,3 +36,11 @@ a:visited{
     padding: 0rem;
     z-index: -1;
 }
+
+@media (max-width: 1200px) {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        color: rgb(37, 203, 98)
+    }
+  }
