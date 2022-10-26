@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JS Arrays Exercise</title>
+  
+<!--THIS IS THE CSS STYLE BUT ON THE .HTLM DOCUMENT-->
+<style>
+body{
+    margin: 50px;
+
+}
+
+
+div{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: blue;
+
+}
+
+span{
+    display: inline-block;
+    align-items: center;
+    /* transition: 1s, all; */
+}
+
+.clicked{
+    /* transform: scale(2); */
+    color:red;
+}
+
+/* :root{
+    --stroke-do: ((x)2);
+} */
+
+.raindrop {
+    stroke: blue;
+    stroke-width: 0.5px;
+    stroke-dasharray: 15px;
+    /* has to be twice of stroke-dashoffset to look NICE */
+    animation: dash 1s linear;
+    transform: rotate(30deg);
+    width: 20px;
+    height: auto;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+@keyframes dash{
+    to {
+        stroke-dashoffset: 30px;
+        /* stroke-dashoffset: var(--stroke-do); */
+        /* has to be half of stroke-dasharray to look NICE.
+        I was trying to automate this on CSS but didn't work out. */
+    }
+}
+
+
+</style>
+</head>
+
+
+<body>
+<div>
+    <h1>WHAT A NICE DAY</h1>
+</div>
+
+<svg class="raindrop">
+  <line x1="0" y1="20"/>
+</svg>
+
+<!-- THIS IS THE START OF JAVASCRIPT -->
+<script>
+//Get my heading
+let heading = document.querySelector('h1');
+
+//Split my heading into individual characters
+//First I need to get the inner text of my heading
+let innerContents = heading.innerText;
+//Then i have to split this up
+let allCharacters = innerContents.split('');
+
+//Keep track of new heading with spans
+let newHeadingText = '';
+
+//Wrap each of my characters into individual spans (like this: <span> </span>)
+for (let i = 0; i < allCharacters.length; i++) {
+    //Get my current character
+    let currentChar = allCharacters[i];
+
+    // check if my current character is a space === ' '
+    (if (currentChar === ' '){
+    // if it is, set my current character to an &nbsp (html entity for non-breaking space);
+    let currentChar = '&nbsp';
+    console.log('is this current Char thing running?')
+    });
+    //when I get THIS to work, the event listener stops working.
+
+    //Wrap my current character
+    let wrapped = '<span>' + currentChar + '</span>';
+    //Add my wrapped text into my new heading that i'm keeping track of
+    newHeadingText = newHeadingText + wrapped;
+    
+    //you can do this console for debugging!!!!
+    console.log('is this even running?')
+}
+
+
+
+//Update my heading with my new characters wrapped in spans
+heading.innerHTML = newHeadingText;
+
+
+//Let's do some funky stuff with clicking
+let spans = document.querySelectorAll('span');
+
+//go through all my spans
+for (let i = 0; i < spans.length; i++) {
+    //Get my current span
+    let currentSpan = spans[i];
+    //add my Event Listener
+    currentSpan.addEventListener('mouseenter', () => {
+        currentSpan.classList.toggle('clicked');
+    }); 
+}
+
+
+//copy my raindrops and randomize their lengths
+// for (let i = 0; i < 50; i++) {
+
+// 	let rain = document.querySelectorAll('raindrop');
+//     let makeRain = rain[i];
+//     let move="translate("+0+","+30+")"
+// }
+
+</script>
+</body>

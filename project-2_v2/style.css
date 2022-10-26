@@ -1,4 +1,6 @@
-
+body{
+    margin:0px;
+}
 /* @-webkit-keyframes blackWhite {  
     0% { background-color: rgb(224, 255, 184); }
     30% { background-color: rgb(192, 250, 154); }
@@ -26,7 +28,7 @@
     width: 100vw;
     
     scroll-snap-type: y mandatory; 
-    overflow-y:scroll;
+    overflow-y: scroll;
     scroll-snap-align: start;
     scroll-behavior: smooth;
 
@@ -35,9 +37,9 @@
     scrollbar-width: none;  /* Firefox */
 
 
-    background-color: blue;
-    background-repeat:no-repeat;
-    background-attachment:local;
+    background-color: rgb(13, 13, 255);
+    /* background-repeat:no-repeat;
+    background-attachment:local; */
 }
 
 /* ROW COLORS  */
@@ -55,12 +57,14 @@
 } */
 
 
-
 p {
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: 'Space Mono', monospace;
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 70px;
+    border-style: solid;
+    border-color:coral;
+    border-style: inset: 10px;
 }
 
 .letter-container{
@@ -68,9 +72,12 @@ p {
     flex-direction: row;
     justify-content:space-around; /*FUCK YEAH INGRID*/
 
-    /*THIS SCROLL SHOULD BE ACCESSED BY USUAL SCROLLING*/
-    scroll-snap-align: start; /* this makes the scroll snap*/
 
+    /*THIS SCROLL SHOULD BE ACCESSED BY USUAL SCROLLING*/
+    /* scroll-snap-type: x mandatory; 
+    overflow-x: scroll; */
+    scroll-snap-align: center;/* this makes the scroll snap*/
+    scroll-behavior: smooth;
 
 /* 
     -webkit-animation-name: blackWhite;  
@@ -87,7 +94,7 @@ p {
     justify-content: center;
 
     /*THIS SCROLL SHOULD ONLY BE TRIGGERED TO RANDOMIZE AT CLICK*/
-    scroll-snap-align: start;
+
     line-height: 25vh;
 
     /* each p should be its own little box and have
