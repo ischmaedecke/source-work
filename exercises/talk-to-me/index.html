@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk to Me</title>
+
+  <!-- HERE WE ARE PUTTING SOME CSS AS A STYLE TAG -->
+  <!-- HERE WE ARE PUTTING SOME CSS AS A STYLE TAG -->
+  <!-- HERE WE ARE PUTTING SOME CSS AS A STYLE TAG -->
+  <!-- Scripts always go in the body. Styles always go on the head. -->
+  <style>
+    .text{
+        color: red;
+    }
+
+    .big-type{
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 68pt;
+        margin-top: 10vh;
+        color:blue;
+    }
+    
+    .form-example{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+    }
+
+    button {
+    border: 0;
+    line-height: 2.5;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 80px;
+    background-color: rgb(7, 0, 130);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+    }
+
+    button:hover {
+        background-color: rgb(24, 24, 255);
+    }
+
+    button:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                    inset 2px 2px 3px rgba(0, 0, 0, .6);
+    }
+
+    div{
+        padding: 10px;
+        margin: 10px;
+    }
+
+  </style>
+</head>
+
+
+
+
+<body>
+    <form>
+        <div class="form-example">
+          <label for="color-input">Enter a color: </label>
+          <input name="color-input" id="color" required>
+        </div>
+
+        <div class="form-example">
+            <label for="column-input">Enter number of columns: </label>
+            <input type="range" value = "1" min=1 max=6 name="column" id="columns" required>
+            <!-- value = "1" refers to the default value that appears when the page is loaded -->
+        </div>
+
+        <div class="form-example">
+            <label for="name-input">Enter name: </label>
+            <input name="name-input" id="name" required>
+          </div>
+
+        <div class="form-example">
+            <button class="rain"
+            type="button">
+            Make it rain
+            </button>
+
+        </div>
+    </form>
+
+    <div class="text">
+        <p>A fan brush is a fantastic piece of equipment. Use it. Make friends with it. We don't have anything but happy trees here. We'll play with clouds today. That's a crooked tree. We'll send him to Washington. Tree trunks grow however makes them happy.</p>
+        <p>As trees get older they lose their chlorophyll. All you have to learn here is how to have fun. This is probably the greatest thing to happen in my life - to be able to share this with you. Any little thing can be your friend if you let it be. Decide where your cloud lives. Maybe he lives right in here. What the devil.</p>        
+        <p>It looks so good, I might as well not stop. We have no limits to our world. We're only limited by our imagination. Only God can make a tree - but you can paint one.</p>        
+        <p>All those little son of a guns. Let's put some happy little clouds in our world. We have all at one time or another mixed some mud. I sincerely wish for you every possible joy life could bring.</p>        
+        <p>Fluff that up. For the lack of a better word I call them hangy downs. The only thing worse than yellow snow is green snow. If we're gonna walk though the woods, we need a little path.</p>  
+        <p>I started painting as a hobby when I was little. I didn't know I had any talent. I believe talent is just a pursued interest. Anybody can do what I do. The first step to doing anything is to believe you can do it. See it finished in your mind before you ever start. Put it in, leave it alone.</p>  
+        <p>All you need to paint is a few tools, a little instruction, and a vision in your mind. Making all those little fluffies that live in the clouds. Zip. That easy.</p>
+    </div>
+
+    <div class="big-type">
+        <p>YOUR NAME</p>
+    </div>
+
+
+    <!-- HERE WE ARE PUTTING SOME JAVASCRIPT AS A SCRIPT TAG -->
+    <!-- HERE WE ARE PUTTING SOME JAVASCRIPT AS A SCRIPT TAG -->
+    <!-- HERE WE ARE PUTTING SOME JAVASCRIPT AS A SCRIPT TAG -->
+    <!-- Scripts always go in the body. Styles always go on the head. -->
+    <script>
+        // Get the input element
+        let inputEl = document.querySelector('#color');
+
+        // Add an event listener that handles the input events from the user
+        inputEl.addEventListener('input', () => {
+            // Get the current value of input
+            let value = inputEl.value;
+            console.log (value);
+
+            // How do we set the bg color of the body?
+            // Get body element.
+            let bodyEl = document.querySelector('body');
+
+            // Set the background color to red the moment the page loads.
+            bodyEl.style.backgroundColor = value;
+        })
+
+        let columnInputEl = document.querySelector('#columns');
+        columnInputEl.addEventListener('input', () => {
+        let value = columnInputEl.value;
+        let textEl = document.querySelector('.text');
+        textEl.style.columns = value;
+        })
+
+        let nameInputEl = document.querySelector('#name');
+        nameInputEl.addEventListener('input', () => {
+            let value = nameInputEl.value;
+            let nameEl = document.querySelector('.big-type');
+            nameEl.innerText = value;
+
+
+        })
+        
+
+
+
+
+
+    </script>
+
+
+</body>
