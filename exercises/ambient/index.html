@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is It Raining? Ambient — Weather API</title>
+
+    <!-- CSS HERE -->
+    <style>
+        body{
+            margin: 0px;
+            /* background-color: rgb(122, 172, 155);  */
+        }
+        p{
+            font-size:  30px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;  
+            padding: 20px;
+            animation: 1s blink infinite;
+            color:rgb(13, 0, 130);
+        }
+
+        @keyframes blink {
+            0%{
+                opacity: 1.0;
+            }
+            50%{
+                color:rgb(13, 0, 130);
+                opacity: 1.0;
+            }
+            100%{
+                opacity: 1.0;
+            }
+        }
+
+        .raindrop line {
+            stroke: rgb(0, 0, 255);
+            stroke-width: 1px;
+            stroke-dasharray: 60px;
+            /* has to be twice of stroke-dashoffset to look NICE */
+            animation: dash var(--speed, 1s) linear;
+            transform: rotate(var(--direction, 0deg));
+            /* transform-origin: center center; */
+            width: 50px;
+            height: 100px;
+            animation-iteration-count: infinite;
+            z-index: -1;
+            /* border: 1px solid rgb(195, 141, 141); */
+        }
+        @keyframes dash{
+            to {
+            stroke-dashoffset: 30px;
+            /* stroke-dashoffset: var(--stroke-do); */
+            /* has to be half of stroke-dasharray to look NICE.
+            I was trying to automate this on CSS but didn't work out. */
+            }
+        }
+
+        .raindrop-container{
+            size: 10vh;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+    </style>
+    
+</head>
+
+<body>
+    <p id="currentTemperature"></p>
+
+    <div class = rain-box>
+        <div class="raindrop-container"></div>
+    </div>
+
+
+
+
+    <!-- JAVASCRIPT HERE -->
+    <script>
+
+        let raindropContainer = document.querySelector('.raindrop-container');
+
+        let svgs = '';
+        for (let i = 0; i < 500; i ++) {
+            svgs += '<svg class="raindrop" viewBox="0 0 40 40" width="40" height="40"><line x1="20" y1="20" x2="20" y2="0" /></svg>';
+        }
+        raindropContainer.innerHTML = svgs;
+        let tempEl = document.querySelector('#currentTemperature');
+        // tempEl.innerText = 'Test';
+
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true&temperature_unit=fahrenheit';
+
+        // this is pretty standard.
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                let currentTemp = data['current_weather']['temperature'];
+                console.log(data['current_weather']['time']);
+                tempEl.innerText = 'The current temperature is '+ currentTemp +'ºF.' ;
+
+                if (currentTemp > 60){
+                    document.body.style.background = 'orange';
+                }
+                else{
+                    // document.body.style.color = 'white';
+                    document.body.style.background = 'lightblue';
+                }
+                let windSpeed = data['current_weather']['windspeed'];
+                let windDirection = data['current_weather']['winddirection'];
+                tempEl.style.animation = windSpeed + 's blink infinite';
+
+                rainContainer.style.setProperty('--speed', windSpeed + 's');
+                rainContainer.style.setProperty('--direction', windDirection + 'deg');
+
+                console.log(data['current_weather']['windspeed']);
+                console.log(windSpeed);
+
+
+
+            });
+
+
+        
+    </script>
+</body>
+</html>

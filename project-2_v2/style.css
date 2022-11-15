@@ -43,8 +43,17 @@ body{
 
 
     background-color: rgb(155, 155, 255);
+    /* background-color: rgb(155, 155, 255); */
 }
-
+/* .column1{
+    background-color: rgb(27, 27, 99);
+}
+.column2{
+    background-color: rgb(104, 159, 97);
+}
+.column3{
+    background-color: rgb(232, 158, 67);
+} */
 /* TESTING COLORS TO SEE WHAT'S WORKING AND WHAT'S NOT */
 /* .adjectives{
     background-color: rgb(43, 43, 255);

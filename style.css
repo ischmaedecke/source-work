@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24pt;
+    font-size: 2vw;
     color: rgb(255, 3, 251)
 }
 
@@ -16,7 +16,7 @@ a:visited{
 
 .text-menu{
     display: block;
-    float:right;
+    float:left;
     text-align: left;
     max-width: 40%;
     margin-left: 10px;
@@ -27,20 +27,20 @@ a:visited{
 }
 
 .landing-image {
-    display:block;
+    /* display:flex; */
     position:fixed;
     object-fit: cover;
-    width: auto;
-    max-height: 100%;
-    margin-left:  0rem;
+    height: 100vh;
+    /* max-height: 100%; */
+    margin-right:  0rem;
     padding: 0rem;
     z-index: -1;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     body {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18pt;
         color: rgb(37, 203, 98)
     }
-  }
+  } */
