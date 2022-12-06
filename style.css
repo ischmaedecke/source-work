@@ -24,7 +24,7 @@ body{
 h1{
     color: var(--blue);
     font-size: 30px;
-    animation: bannermove 20s linear infinite;
+    animation: bannermove 10s linear infinite alternate;
     text-align: center;
     white-space: nowrap;
 }
@@ -54,10 +54,10 @@ h1{
 
 @keyframes bannermove {
     from {
-      transform: translateX(100%);
+      transform: translateX(50%);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
 }
 
