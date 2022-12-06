@@ -7,51 +7,34 @@ body {
     position: relative;
 }
 
-p{
-    color:blue;
-    font-weight: bold;
-    font-size: 30px;
-    position: relative;
-}
-div{
-    transform: translateZ(0);
-    background: rgba(149, 0, 255, 0.2);
-    padding: 10px;      
-
-}
-
 :root {
     --zindexController: 0;
     }
 
-#zvar{
-    z-index: var(--zindexController); 
-    /* animation-name: zindex;
-    animation-duration: 2s; */
-    /* animation-direction: reverse; */
-    /* animation-iteration-count: 3; */
-    background: rgb(204, 255, 0);
-    opacity: 1;
-    width: 100vw;
-    height: 100vh;
+p{
+    color:blue;
+    font-weight: bold;
+    font-size: 30px;
+    background: rgba(149, 0, 255, 0.2);
+    position: relative;
+
+    border: 1px black;
+}
+
+div{
+    transform: translateZ(0);
+    padding: 10px;      
 
 }
 
-
-
-
-/* .layers{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr;
-} */
-
 div.layers{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 100vw;
+    grid-template-columns: 1fr;
+    width: 100px;
     height: 100vh;
+    align-items: center;
+    justify-items: center;
+
 }
 
 /* all the ids for static Z indexes */
