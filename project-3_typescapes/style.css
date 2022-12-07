@@ -20,7 +20,7 @@ body{
 .divao{
     /* transform: translateZ(0); */
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 h1{
@@ -28,14 +28,12 @@ h1{
     font-size: 30px;
     animation: bannermove 15s linear infinite;
     text-align: center;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .upper {
     position: fixed;
     top: 0;  
-    left: 0;
-    right: 0;
 }
 
 .lower {
@@ -45,12 +43,11 @@ h1{
 
 .banner{
     z-index: 100;
-	height: 10vh;
+	height: 80px;
 	width: 100vw;
     background-color: var(--yellow);
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -77,13 +74,31 @@ p{
     grid-auto-flow: dense; */
     display: flex;
     flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
     width: 100%;
-    height: 80vh;
-    /* gap: 10px; */
+    height: calc(100vh - 40px) !important;
+    /* max-height: calc(100vh + 500px); */
+    gap: 10px;
     /* if i get rid of the gap, the thing works. WHYYYYY? */
-    padding: calc(10vh + 10px) 10px calc(10vw + 10px) 10px;
+    /* padding: calc(10vh + 10px) 10px calc(10vh + 10px) 10px; */
     /* CALC you gotta have SPACES between the +  */
+    padding: 90px 10px 90px 10px;
+}
 
+.backbutton{
+    /* background-color:  var(--yellow); */
+    background-color: white;
+    color: var(--blue);
+    border: var(--border-width) solid var(--blue);
+    flex-grow: 3;
+}
+
+.backbutton:hover{
+    /* background-color: var(--blue); */
+    background-color: white;
+    color:  var(--yellow);
+    border: var(--border-width) solid var(--yellow);
 }
 
 .instructions{
@@ -94,7 +109,9 @@ p{
     /* font-size: 20px; */
     /* grid: span 2; */
     width: 400px;
-    flex-grow: 4;
+    max-height: calc(100vh - 20px) !important;
+    flex-grow: 3;
+    padding: 100px;
 }
 
 .instructions:hover{
@@ -109,44 +126,45 @@ a {
     color: var(--yellow);
     text-decoration: none;
     width: 30%;
-    height: 100%;
-    font-size: 30px;
+    /* height: 100%; */
+    font-size: 1.5vw;
     border-radius: 50%;
     text-align: center;
     padding: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex: 1 0 21%; */
+    /* flex-basis: 10%; */
+    flex-grow: 1;
 }
 a:hover{
     background-color: var(--yellow);
     color:  var(--blue);
 }
 
-@media (max-width: 1400px) {
-    .projects{
+@media (max-width: 1600px) {
+    /* .projects{
         grid-template-columns: 1fr 1fr;
-    }
+    } */
     .instructions{
         border: var(--border-width) solid var(--blue);
     }
     a{
         font-size: 24px;
         padding: 70px;
-        width: 50%;
+        /* width: 50%; */
     }
 }
 
 @media (max-width: 400px) {
-    .projects{
+    /* .projects{
         grid-template-columns: 1fr;
-    }
+    } */
     .instructions{
         border: var(--border-width) solid var(--blue);
     }
     a{
         font-size: 16px;
-        width: 100%;
+        /* width: 100%; */
     }
 }
