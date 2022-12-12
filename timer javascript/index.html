@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<style>
+@font-face {
+font-family: "SevenSegment";
+src: local("DSEG7Classic-Bold"), url("DSEG7Classic-Bold.ttf");
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+    font-family: SevenSegment, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 40vw;
+    color: red;
+    /* filter: blur(5px); */
+    display: flex;
+    align-items: center;
+
+}
+div {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+</style>
+</head>
+
+<body>
+
+<div id="trigger">
+    <p id="countdown"></p>
+</div>
+
+
+<script>
+let min = 19
+let max = 25
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+console.log(getRandomArbitrary(min,max));
+
+let numberOfSeconds = getRandomArbitrary(min,max)
+
+let countdown = document.getElementById("countdown");
+let trigger = document.getElementById("trigger");
+
+trigger.addEventListener("click", timer);
+
+
+function timer(){
+  trigger.removeEventListener("click", timer);
+  let timeleft = numberOfSeconds;
+  countdown.innerText = timeleft;
+  let downloadTimer = setInterval(function() {
+        timeleft -= 1;
+        countdown.innerText = timeleft;
+        if(timeleft <10){
+          countdown.innerText = "0" + timeleft;
+        }
+        if(timeleft <= 0){
+          trigger.addEventListener("click", timer);
+          clearInterval(downloadTimer); 
+          // event listener only when time is out
+        }
+  }, 1000);
+}
+
+// let i = 0;
+
+// function myLoop() {               //  create a loop function
+
+
+//   setTimeout(function () {        //  call a 3s setTimeout when the loop is called
+
+//     document.documentElement.style.setProperty(`--zindexController`, i);
+//     i++;                          //  increment the counter
+
+//     if (i < 102) {                //  if the counter < 101, call the loop function
+//       setTimeout(myLoop, 0);
+//       console.log('hi');
+//     }
+  
+//     if (i == 102) {
+//     i = 0;
+//     let restart;
+//     clearTimeout(restart);
+//     restart = setTimeout(myLoop, 100);
+//     console.log('hello second if');
+//     }
+//   }, 100)
+// }
+
+// myLoop();                   //  start the loop
+
+
+
+// var timeleft = numberOfSeconds;
+// var downloadTimer = setInterval(function setTimer(){
+//   if(timeleft <= 0){
+//     clearInterval(downloadTimer);
+
+//     document.getElementById("countdown").innerHTML = "0";
+  
+
+//   } else {
+//     document.getElementById("countdown").innerHTML = timeleft;
+//   }
+//   timeleft -= 1;
+// }, 1000);
+
+// if (downloadTimer < 0){
+//   window.addEventListener("click", setInterval())
+//   console.log('hello event listener!');
+// }
+
+
+
+
+
+</script>
+
+</body>
+</html>
